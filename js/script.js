@@ -24,6 +24,18 @@ studentForm.addEventListener("submit", function (event) {
         studentCourse: document.getElementById("course").value
     };
 
+     // phone number validation
+    if (isNaN(student.phoneNumber) || student.phoneNumber.length !== 10) {
+        alert("Enter a valid 10-digit phone number");
+        return;
+    }
+
+    if (!student.firstName || !student.lastName) {
+    alert("First and Last name are required");
+    return;
+}
+
+
     students.push(student);
 
     updateStudentCount();
